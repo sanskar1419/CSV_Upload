@@ -6,6 +6,10 @@ export default class CsvHomeController {
   }
 
   async getHome(req, res) {
-    res.status(200).send("Welcome to your Csv Home Page");
+    res.render("home", {
+      title: "CSV Home",
+      errorMessage: null,
+    });
+    // res.status(200).send("Welcome to your Csv Home Page");
   }
 }
