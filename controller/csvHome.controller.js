@@ -1,7 +1,8 @@
 import CsvFileModel from "../model/csvFile.model.js";
 import CsvHomeRepository from "../repository/csvHome.repository.js";
-import multer from "multer";
-const upload = multer().single("csvFile");
+import CsvFile from "../schema/csvHome.schema.js";
+import fs from "fs";
+import csvParser from "csv-parser";
 
 export default class CsvHomeController {
   constructor() {
@@ -53,6 +54,30 @@ export default class CsvHomeController {
       const { id } = req.query;
       await this.csvHomeRepository.delete(id);
       res.redirect("back");
+    } catch (err) {
+      console.log(err);
+      throw new Error("Something Went Wrong");
+    }
+  }
+
+  async fileViewer(req, res) {
+    try {
+      const { id } = req.query;
+      const file = await CsvFile.findOne({ _id: id });
+      const results = [];
+      const headers = [];
+      fs.createReadStream(file.filePath)
+        .pipe(csvParser())
+        .on("headers", (header) => {
+          header.forEach((data) => {
+            headers.push(data);
+          });
+        })
+        .on("data", (data) => results.push(data))
+        .on("end", () => {
+          // console.log(results);
+          res.status(200).send(headers);
+        });
     } catch (err) {
       console.log(err);
       throw new Error("Something Went Wrong");

@@ -6,19 +6,6 @@ export default class CsvHomeRepository {
   async getAll() {
     try {
       const files = await CsvFile.find({});
-      for (let file of files) {
-        console.log(
-          file.createdAt.toLocaleTimeString(undefined, {
-            timeZone: "Asia/Kolkata",
-          })
-        );
-
-        console.log(
-          file.createdAt.toLocaleDateString(undefined, {
-            timeZone: "Asia/Kolkata",
-          })
-        );
-      }
       return files;
     } catch (err) {
       console.log(err);
