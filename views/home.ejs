@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/home.css" />
+
 <div class="home-container">
   <div class="input-form-container">
     <h3>Upload Your File Here</h3>
@@ -18,5 +19,48 @@
         <button type="submit" class="btn btn-dark">Upload File</button>
       </div>
     </form>
+  </div>
+
+  <div class="csv-filed-table">
+    <h2>All Uploaded File</h2>
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Uploaded Date</th>
+            <th>Uploaded Time</th>
+            <th>View File</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for(let file of files){ %>
+          <tr>
+            <td><%= file.originalFileName%></td>
+            <td>
+              <%=file.createdAt.toLocaleDateString(undefined, {timeZone:
+              "Asia/Kolkata",})%>
+            </td>
+            <td>
+              <%=file.createdAt.toLocaleTimeString(undefined, { timeZone:
+              "Asia/Kolkata",})%>
+            </td>
+            <td>
+              <button type="button" class="btn btn-dark">
+                <i class="bi bi-binoculars-fill"></i>
+              </button>
+            </td>
+            <td>
+              <a href="" class="btn btn-dark"
+                ><i class="bi bi-trash3-fill"></i
+              ></a>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

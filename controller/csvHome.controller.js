@@ -9,9 +9,11 @@ export default class CsvHomeController {
   }
 
   async getHome(req, res) {
+    const files = await this.csvHomeRepository.getAll();
     res.render("home", {
       title: "CSV Home",
       errorMessage: null,
+      files: files,
     });
     // res.status(200).send("Welcome to your Csv Home Page");
   }

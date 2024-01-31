@@ -3,6 +3,28 @@ import CsvFile from "../schema/csvHome.schema.js";
 import fs from "fs";
 
 export default class CsvHomeRepository {
+  async getAll() {
+    try {
+      const files = await CsvFile.find({});
+      for (let file of files) {
+        console.log(
+          file.createdAt.toLocaleTimeString(undefined, {
+            timeZone: "Asia/Kolkata",
+          })
+        );
+
+        console.log(
+          file.createdAt.toLocaleDateString(undefined, {
+            timeZone: "Asia/Kolkata",
+          })
+        );
+      }
+      return files;
+    } catch (err) {
+      console.log(err);
+      throw new Error("Something Went Wrong");
+    }
+  }
   async saveFileToDatabase(file) {
     try {
       const newRecord = new CsvFile(file);
