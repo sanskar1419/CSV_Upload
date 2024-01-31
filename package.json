@@ -1,7 +1,7 @@
 {
   "name": "csv_upload",
   "version": "1.0.0",
-  "description": "a web application that allows users to upload and parse CSV files.",
+  "description": "A web application that allows users to upload and parse CSV files.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
