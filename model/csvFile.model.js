@@ -1,8 +1,8 @@
 export default class CsvFileModel {
-  constructor(fileName, filePath, file, _id) {
+  constructor(originalFileName, filePath, filename, _id) {
     this.id = _id;
-    this.fileName = fileName;
+    this.originalFileName = originalFileName;
     this.filePath = filePath;
-    this.file = file;
+    this.filename = filename;
   }
 }

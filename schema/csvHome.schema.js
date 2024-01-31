@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 export const csvFileSchema = new mongoose.Schema(
   {
-    fileName: {
+    originalFileName: {
       type: String,
     },
     filePath: {
       type: String,
     },
-    file: {
+    filename: {
       type: String,
     },
   },
