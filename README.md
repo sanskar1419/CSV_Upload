@@ -69,4 +69,4 @@ $ http://localhost:9000
 
 ## Screenshots
 
-<img width="960" alt="Screenshot 2023-05-02 014605" src="https://ibb.co/gPLRS04">
+<img width="960" alt="Screenshot 2023-05-02 014605" src="https://drive.google.com/file/d/11as07VFw-V1vbuZ3ImcvhbNnjAoIawUV/view?usp=drive_link">
