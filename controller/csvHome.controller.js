@@ -76,7 +76,14 @@ export default class CsvHomeController {
         .on("data", (data) => results.push(data))
         .on("end", () => {
           // console.log(results);
-          res.status(200).send(headers);
+          // res.status(200).send(results);
+          res.render("fileView", {
+            title: "CSV File View",
+            errorMessage: null,
+            headers: headers,
+            results: results,
+            filename: file.originalFileName,
+          });
         });
     } catch (err) {
       console.log(err);

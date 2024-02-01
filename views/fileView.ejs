@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="css/view.css" />
+<div class="file-view-container">
+  <h3>Search whatever you want to find</h3>
+  <p>
+    If you do not expect the unexpected you will not find it, for it is not to
+    be reached by search or trail
+  </p>
+  <form class="d-flex" role="search">
+    <input
+      class="form-control me-2"
+      type="search"
+      id="search-value"
+      placeholder="Search"
+      aria-label="Search"
+      required
+    />
+  </form>
+
+  <div class="csv-filed-table">
+    <h2><%= filename %></h2>
+
+    <nav aria-label="Page navigation example" class="page-container">
+      <select
+        class="form-select form-select-sm"
+        aria-label="Default select example"
+        id="record-size"
+      >
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+      <ul class="pagination justify-content-end pagination-sm" id="pagination">
+        <!-- <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li> -->
+      </ul>
+    </nav>
+
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <% for(let header of headers) {%>
+            <th><%= header.toUpperCase() %></th>
+            <%}%>
+          </tr>
+        </thead>
+
+        <tbody id="record">
+          <% for(let result of results) {%>
+          <tr class="table-row">
+            <% for(let key of Object.keys(result)) { %>
+            <td><%= result[key] %></td>
+            <% } %>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="js/view.js"></script>
