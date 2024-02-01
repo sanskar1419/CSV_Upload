@@ -100,16 +100,19 @@ function generatePage() {
 function prevBtn() {
   pageNumber--;
   displayRecord();
+  searchInputField.value = "";
 }
 
 function nextBtn() {
   pageNumber++;
   displayRecord();
+  searchInputField.value = "";
 }
 
 function pageChange(index) {
   pageNumber = parseInt(index);
   displayRecord();
+  searchInputField.value = "";
 }
 
 recordSize.addEventListener("change", function (e) {
