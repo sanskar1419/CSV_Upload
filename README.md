@@ -69,4 +69,18 @@ $ http://localhost:9000
 
 ## Screenshots
 
-<img width="960" alt="Screenshot 2023-05-02 014605" src="https://drive.google.com/file/d/11as07VFw-V1vbuZ3ImcvhbNnjAoIawUV/view?usp=drive_link">
+### Home Page
+
+![Home](https://github.com/sanskar1419/Project_Screenshot/blob/master/CSV_Upload/Screenshot%202024-02-01%20151357.png?raw=true)
+
+### View Page
+
+![Home](https://github.com/sanskar1419/Project_Screenshot/blob/master/CSV_Upload/Screenshot%202024-02-01%20151425.png?raw=true)
+
+### View Page Table View
+
+![Home](https://github.com/sanskar1419/Project_Screenshot/blob/master/CSV_Upload/Screenshot%202024-02-01%20151435.png?raw=true)
+
+### View Page Search Result
+
+![Home](https://github.com/sanskar1419/Project_Screenshot/blob/master/CSV_Upload/Screenshot%202024-02-01%20151452.png?raw=true)
