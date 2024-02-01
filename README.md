@@ -69,4 +69,4 @@ $ http://localhost:9000
 
 ## Screenshots
 
-![App Screenshot](https://ibb.co/gPLRS04/468x300?)
+![App Screenshot](https://ibb.co/gPLRS04/468x300)
