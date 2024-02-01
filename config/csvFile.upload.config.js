@@ -1,5 +1,7 @@
+// Importing Require Packages and module
 import multer from "multer";
 
+// Configuring multer and setting file destination and filename
 const storageConfig = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "assets/csvUploadedFile");
@@ -10,6 +12,7 @@ const storageConfig = multer.diskStorage({
   },
 });
 
+// Exporting multer configuration and applying filefilter and limit size
 const maxSize = 15 * 1024 * 1024;
 export const uploadFile = multer({
   storage: storageConfig,

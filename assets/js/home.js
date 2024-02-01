@@ -1,3 +1,4 @@
+// Function for deleting file
 function deleteFile(id) {
   //   console.log(id);
   const result = confirm("Are you sure you want to delete this CSV File?");

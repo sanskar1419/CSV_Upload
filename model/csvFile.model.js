@@ -1,3 +1,4 @@
+// Defining the model structure for csv file
 export default class CsvFileModel {
   constructor(originalFileName, filePath, filename, _id) {
     this.id = _id;

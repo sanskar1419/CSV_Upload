@@ -1,14 +1,17 @@
+// Importing Require Packages and module
 import CsvFileModel from "../model/csvFile.model.js";
 import CsvHomeRepository from "../repository/csvHome.repository.js";
 import CsvFile from "../schema/csvHome.schema.js";
 import fs from "fs";
 import csvParser from "csv-parser";
 
+// Defining Class and all the required method
 export default class CsvHomeController {
   constructor() {
     this.csvHomeRepository = new CsvHomeRepository();
   }
 
+  // Get the home view
   async getHome(req, res) {
     const files = await this.csvHomeRepository.getAll();
     res.render("home", {
@@ -19,6 +22,7 @@ export default class CsvHomeController {
     // res.status(200).send("Welcome to your Csv Home Page");
   }
 
+  // Adding csv file to db
   async uploadFile(req, res) {
     try {
       if (!req.file) {
@@ -49,6 +53,7 @@ export default class CsvHomeController {
     }
   }
 
+  // Deleting the csv file
   async deleteCsvFile(req, res) {
     try {
       const { id } = req.query;
@@ -60,6 +65,7 @@ export default class CsvHomeController {
     }
   }
 
+  // Rendering the tabular view page
   async fileViewer(req, res) {
     try {
       const { id } = req.query;

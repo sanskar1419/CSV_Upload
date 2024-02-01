@@ -1,7 +1,9 @@
+// Importing necessary tag and data
 const recordDisplay = document.getElementById("record");
 const searchInputField = document.getElementById("search-value");
 const recordSize = document.getElementById("record-size");
 
+// Add event listener to input field and search function
 searchInputField.addEventListener("input", function (e) {
   const rows = document.querySelectorAll("#record tr");
   console.log(rows);
@@ -34,6 +36,8 @@ let totalPage = Math.ceil(totalRecordLength / recordPerPage);
 
 generatePage();
 displayRecord();
+
+// Displaying record
 function displayRecord() {
   let startIndex = (pageNumber - 1) * recordPerPage;
   let endIndex = startIndex + (recordPerPage - 1);
@@ -70,6 +74,7 @@ function displayRecord() {
   }
 }
 
+// Generating number of page
 function generatePage() {
   let prevButton = `<li class="page-item">
   <a class="page-link" id="prevBtn" onclick="prevBtn()" href="javascript:void(0)" aria-label="Previous">
@@ -97,24 +102,28 @@ function generatePage() {
   ).innerHTML = `${prevButton} ${buttons} ${nextButton}`;
 }
 
+// function decrementing page number
 function prevBtn() {
   pageNumber--;
   displayRecord();
   searchInputField.value = "";
 }
 
+// function incrementing page number
 function nextBtn() {
   pageNumber++;
   displayRecord();
   searchInputField.value = "";
 }
 
+// function for individual page
 function pageChange(index) {
   pageNumber = parseInt(index);
   displayRecord();
   searchInputField.value = "";
 }
 
+// function for setting no. of record to display
 recordSize.addEventListener("change", function (e) {
   recordPerPage = parseInt(e.target.value);
   totalPage = Math.ceil(totalRecordLength / recordPerPage);

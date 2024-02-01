@@ -1,8 +1,12 @@
+// Importing Require Packages and module
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
 dotenv.config();
+
+// Import env variable
 const url = process.env.DB_URL;
+
+// Connecting to MongoDB using mongoose
 export const connectUsingMongoose = async () => {
   try {
     await mongoose.connect(url, {
