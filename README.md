@@ -2,12 +2,12 @@
 
 CSV_Uploader_And_Viewer is a web application where we can add .csv file and then we can show the data in it in the tabular format. We can also delete that file, which will delete it from db as well as fs. We also have functionality to search specific field.
 
-## Deployment
+## Deployment Link
 
-To deploy this project run
+To view the web application go to this link
 
 ```bash
-  npm run deploy
+  https://csv-uploader-o7ij.onrender.com
 ```
 
 ## Tech Stack
